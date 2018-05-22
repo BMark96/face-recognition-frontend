@@ -1,0 +1,15 @@
+
+<mat-card class="image-card">
+  <mat-card-header>
+    <mat-card-title class="image-text">{{imageId}}. Image</mat-card-title>
+  </mat-card-header>
+  <img mat-card-image class = "image-photo" src={{imageUrl}}>
+  <span fxLayoutAlign="center">
+    <button class="image-button image-button-upload" mat-fab color="primary">
+        <mat-icon aria-label="Upload image">add</mat-icon>
+    </button>
+    <button class="image-button" mat-fab  color="warn">
+        <mat-icon aria-label="Upload image">clear</mat-icon>
+    </button>
+  </span>
+</mat-card>

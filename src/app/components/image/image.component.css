@@ -1,0 +1,17 @@
+.image-card {
+    margin: 10px;
+    background-color: rgb(236, 234, 234);
+}
+
+.image-button {
+    margin: 5px;
+}
+
+.image-button-upload {
+    background-color: rgb(0, 128, 121)
+}
+
+.image-text {
+    font-size: 150%;
+}
+

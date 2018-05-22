@@ -1,0 +1,22 @@
+.face-icon {
+    padding: 0 14px;
+    vertical-align:middle;
+}
+
+.app-toolbar {
+    margin-bottom: 1%;
+}
+
+.comparator {
+    /*background-color: rgb(4, 0, 53);*/
+    background-color: rgb(48, 47, 47);
+}
+
+.page-header {
+    background-color: rgb(0, 128, 121);
+}
+
+.result {
+    flex: 1 1 auto;
+    text-align: center;
+}
