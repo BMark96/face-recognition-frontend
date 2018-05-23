@@ -1,15 +1,15 @@
-
+<input #fileInput type='file' (change)="onFileUploaded($event)" hidden/>
 <mat-card class="image-card">
   <mat-card-header>
-    <mat-card-title class="image-text">{{imageId}}. Image</mat-card-title>
+    <mat-card-title class="image-text">{{getAge()}}</mat-card-title>
   </mat-card-header>
-  <img mat-card-image class = "image-photo" src={{imageUrl}}>
+  <img mat-card-image class="image-photo" [src]="getImageSrc()">
   <span fxLayoutAlign="center">
-    <button class="image-button image-button-upload" mat-fab color="primary">
+    <button class="image-button image-button-upload" (click)="fileInput.click()" mat-fab color="primary">
         <mat-icon aria-label="Upload image">add</mat-icon>
     </button>
-    <button class="image-button" mat-fab  color="warn">
-        <mat-icon aria-label="Upload image">clear</mat-icon>
+    <button class="image-button" (click)="onImageDeleted()" mat-fab color="warn" [disabled]="!isImageLoaded">
+        <mat-icon aria-label="Delete image">clear</mat-icon>
     </button>
   </span>
 </mat-card>

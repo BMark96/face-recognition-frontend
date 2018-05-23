@@ -13,7 +13,7 @@
   "private": true,
   "dependencies": {
     "@angular/animations": "^6.0.2",
-    "@angular/cdk": "^6.0.2",
+    "@angular/cdk": "^6.1.0",
     "@angular/cli": "~6.0.3",
     "@angular/common": "^6.0.2",
     "@angular/compiler": "^6.0.2",
@@ -22,14 +22,14 @@
     "@angular/flex-layout": "^6.0.0-beta.15",
     "@angular/forms": "^6.0.2",
     "@angular/http": "^6.0.2",
-    "@angular/material": "^6.0.2",
+    "@angular/material": "^6.1.0",
     "@angular/platform-browser": "^6.0.2",
     "@angular/platform-browser-dynamic": "^6.0.2",
     "@angular/router": "^6.0.2",
     "core-js": "^2.5.4",
     "express": "^4.16.3",
     "path": "^0.12.7",
-    "rxjs": "^6.0.0",
+    "rxjs": "^6.2.0",
     "typescript": "~2.7.2",
     "zone.js": "^0.8.26"
   },
@@ -40,7 +40,7 @@
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "~8.9.4",
     "codelyzer": "~4.2.1",
-    "enhanced-resolve": "^3.3.0",
+    "enhanced-resolve": "^3.4.1",
     "jasmine-core": "~2.99.1",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~1.7.1",
@@ -55,5 +55,17 @@
   "engines": {
     "node": "8.11.1",
     "npm": "5.6.0"
-  }
+  },
+  "description": "This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.3.",
+  "main": "server.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BMark96/face-recognition-frontend.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BMark96/face-recognition-frontend/issues"
+  },
+  "homepage": "https://github.com/BMark96/face-recognition-frontend#readme"
 }
