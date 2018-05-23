@@ -4,6 +4,7 @@ import { Image } from "../models/image.type";
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Face } from '../models/face.type';
 import { Observable } from "rxjs";
+import { Similarity } from "../models/similarity.type";
 
 @Injectable()
 export class FaceService {
@@ -11,7 +12,7 @@ export class FaceService {
 
     //private subscriptionKey: string = "5b777f9876f749e198bd4bb52ef7eeef";
     private subscriptionKey: string = "ad22a1edffd6416fafa7725a7ce11513";
-    private endpoint: string = "https://westcentralus.api.cognitive.microsoft.com/face/v1.0/detect";
+    private endpoint: string = "https://westcentralus.api.cognitive.microsoft.com/face/v1.0/";
 
     private createBlob(imageBase64, contentType='') {
         const byteCharacters = atob(imageBase64);
@@ -26,9 +27,9 @@ export class FaceService {
         return blob;
     }
 
-    private getHeaders() {
+    private getHeaders(contentType) {
         const headers = new HttpHeaders()
-            .set('Content-Type', 'application/octet-stream')
+            .set('Content-Type', contentType)
             .set('Ocp-Apim-Subscription-Key', this.subscriptionKey);
     
         return headers;
@@ -44,15 +45,32 @@ export class FaceService {
     }
 
     getFaces(base64Image): Observable<Face[]> {
-        const headers = this.getHeaders();
+        const headers = this.getHeaders('application/octet-stream');
         const params = this.getParams();
         const blob = this.createBlob(base64Image);
 
         return this.http.post<Face[]>(
-            this.endpoint,
+            this.endpoint + "detect",
             blob,
             {
                 params,
+                headers
+            }
+        );  
+    }
+
+    getSimilarity(faceId1, faceId2): Observable<Similarity[]> {
+        const headers = this.getHeaders('application/json');
+
+        return this.http.post<Similarity[]>(
+            this.endpoint + "findsimilars",
+            {
+                "faceId": faceId1,
+                "faceIds": [faceId2],
+                "maxNumOfCandidatesReturned": 1,
+                "mode": "matchFace"
+            },
+            {
                 headers
             }
         );  

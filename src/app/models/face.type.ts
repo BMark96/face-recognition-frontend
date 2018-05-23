@@ -1,11 +1,8 @@
+import { BoundingBox } from "./bounding-box.type";
+
 export interface Face {
     "faceId": string,
-    "faceRectangle": {
-        "width": number,
-        "height": number,
-        "left": number,
-        "top": number
-    }, 
+    "faceRectangle": BoundingBox,
     "faceAttributes": {
         "age": number,
         "gender": string

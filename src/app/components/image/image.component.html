@@ -1,9 +1,20 @@
 <input #fileInput type='file' (change)="onFileUploaded($event)" hidden/>
 <mat-card class="image-card">
   <mat-card-header>
-    <mat-card-title class="image-text">{{getAge()}}</mat-card-title>
+    <mat-card-title class="image-text">{{header}}</mat-card-title>
   </mat-card-header>
-  <img mat-card-image class="image-photo" [src]="getImageSrc()">
+  
+  <div class="image-container">
+    <img #image class="image-photo" [src]="getImageSrc()">
+    <!--svg class="rectangles" *ngFor='let rectangle of getBoundingBoxes();'>
+      <rect  
+        [attr.x]="rectangle.left"
+        [attr.y]="rectangle.top"
+        [attr.width]="rectangle.width"
+        [attr.height]="rectangle.height"/>
+    </svg-->
+  </div>
+
   <span fxLayoutAlign="center">
     <button class="image-button image-button-upload" (click)="fileInput.click()" mat-fab color="primary">
         <mat-icon aria-label="Upload image">add</mat-icon>
