@@ -16,10 +16,10 @@ import { IdProviderService } from '../../services/id-provider.service';
 })
 export class ImageComponent implements OnInit {
   header: string = "No image with face";
+  isImageLoaded: boolean;
   private id: number;
   private image: Image;
   private faces: Face[] = [];
-  private isImageLoaded: boolean;
 
   constructor(
     private imageService: ImageService, 
