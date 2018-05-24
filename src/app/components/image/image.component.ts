@@ -15,7 +15,7 @@ import { IdProviderService } from '../../services/id-provider.service';
   styleUrls: ['./image.component.css']
 })
 export class ImageComponent implements OnInit {
-  private header: string = "No image with face";
+  header: string = "No image with face";
   private id: number;
   private image: Image;
   private faces: Face[] = [];
