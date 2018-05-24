@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+
 import { ComparatorService } from '../../services/comparator.service'
 
 @Component({
@@ -9,6 +10,10 @@ import { ComparatorService } from '../../services/comparator.service'
 export class AppComponent {
   constructor(private comparatorService: ComparatorService) {}
 
+  /**
+   * Get feedback message shown in second line of toolbar.
+   * @returns       Toolbar message.
+   */
   getMessage() {
     return this.comparatorService.getMessage();
   }

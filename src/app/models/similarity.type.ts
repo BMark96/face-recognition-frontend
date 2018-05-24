@@ -1,4 +1,4 @@
 export interface Similarity {
-    persistedFaceId : string,
-    confidence : number
+    "persistedFaceId" : string,
+    "confidence" : number
 }

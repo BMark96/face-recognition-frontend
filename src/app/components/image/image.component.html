@@ -4,7 +4,7 @@
     <mat-card-title class="image-text">{{header}}</mat-card-title>
   </mat-card-header>
   
-  <div class="image-container">
+  <div #imageContainer class="image-container">
     <img #image class="image-photo" [src]="getImageSrc()">
     <!--svg class="rectangles" *ngFor='let rectangle of getBoundingBoxes();'>
       <rect  
